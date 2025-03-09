@@ -1,0 +1,1 @@
+{"version":3,"file":"_page.js","sources":["../../../../../../src/routes/admin/+page.js"],"sourcesContent":["export const ssr = false;\n"],"names":[],"mappings":"AAAY,MAAC,MAAM;"}

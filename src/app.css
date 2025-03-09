@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burton-black: #0A0004;
+  --burton-blue: #6D5ACF;
+  --burton-white: #F5F5F5;
+  --burton-purple: #3A1F68;
+  --burton-amber: #FFB347;
+  --burton-charcoal: #2E2E2E;
+
+  /* Lighting variables */
+  --flicker-bright: rgba(255, 255, 255, 0.8);
+  --flicker-dim: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  html, body {
+    @apply h-full overflow-x-hidden;
+  }
+  
+  body {
+    @apply bg-[var(--burton-black)] text-[var(--burton-white)] overflow-y-auto;
+  }
+}
+
+@layer components {
+  .burton-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .burton-box {
+    @apply bg-[var(--burton-charcoal)] border-2 border-[var(--burton-purple)] 
+           shadow-lg rounded-sm p-4;
+  }
+
+  .burton-button {
+    @apply bg-[var(--burton-purple)] text-[var(--burton-white)]
+           hover:bg-[var(--burton-blue)] transition-colors duration-300
+           px-4 py-2 rounded-sm burton-text-shadow;
+  }
+
+  /* Styles for the mansion map */
+  .map-container {
+    @apply flex justify-center items-center w-full h-full relative overflow-hidden;
+  }
+
+  .map {
+    @apply relative w-full max-w-[800px]; /* Default width */
+    aspect-ratio: 16/9;
+  }
+
+  .map-image {
+    @apply w-full h-auto object-contain transition-transform duration-300 ease-in-out;
+  }
+
+  .room-marker {
+    @apply absolute z-10; /* Keep markers fixed and above the map */
+    transform: translate(-50%, -50%); /* Center markers on their positions */
+    width: 24px; /* Fixed size */
+    height: 24px;
+    background-color: var(--burton-purple);
+    border-radius: 50%;
+  }
+
+  /* Enlarging the mansion map image for mobile views */
+  @media (max-width: 768px) {
+    .map {
+      @apply max-w-full; /* Allow the map to take full width */
+    }
+
+    .map-image {
+      transform: scale(1.6); /* Larger mansion image */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .map-image {
+      transform: scale(2.0); /* Further enlarge mansion image for small screens */
+    }
+
+    /* Spread out marker positions for smaller screens */
+    .room-marker[data-room="library"] {
+      top: 15%;
+      left: 20%;
+    }
+
+    .room-marker[data-room="ballroom"] {
+      top: 40%;
+      left: 60%;
+    }
+
+    .room-marker[data-room="study"] {
+      top: 70%;
+      left: 40%;
+    }
+
+    .room-marker[data-room="kitchen"] {
+      top: 80%;
+      left: 20%;
+    }
+
+    .room-marker[data-room="dining"] {
+      top: 50%;
+      left: 30%;
+    }
+
+    .room-marker[data-room="hall"] {
+      top: 25%;
+      left: 70%;
+    }
+  }
+}

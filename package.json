@@ -1,0 +1,26 @@
+{
+  "name": "murder-at-greystone-manor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/auth-helpers-sveltekit": "^0.13.0",
+    "@supabase/supabase-js": "^2.48.1",
+    "motion": "^10.17.0",
+    "svelte": "^4.2.11"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^3.1.1",
+    "@sveltejs/kit": "^2.5.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.1.1"
+  }
+}

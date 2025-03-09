@@ -1,0 +1,1 @@
+{"version":3,"file":"_page.js","sources":["../../../../../src/routes/+page.js"],"sourcesContent":["export const prerender = true;\n"],"names":[],"mappings":"AAAY,MAAC,YAAY;"}
